@@ -1,75 +1,131 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# 🛡️ EntryShield AI  
+Smart gate security system with **real-time license plate recognition**, **automatic entry logging**, and **role-based access control** for monitoring vehicles and managing alerts.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Node.js](https://img.shields.io/badge/node.js-v14+-green.svg)](https://nodejs.org)
+[![React](https://img.shields.io/badge/React-19.2-blue.svg)](https://react.dev)
+[![MongoDB](https://img.shields.io/badge/MongoDB-local-green.svg)](https://www.mongodb.com)
 
-## Available Scripts
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+- 📹 **Live Webcam Scanning** - Real-time plate recognition every 2 seconds
+- 🚗 **Smart Entry Logging** - Auto-logs registered vehicles, alerts for unknown ones
+- 👥 **Visitor Management** - Manual visitor entry with complete tracking
+- 🚨 **Alert System** - Unknown vehicle detection with resolution tracking
+- 🔐 **Role-Based Access** - Guard (full) and Admin (view-only) roles
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🏗️ Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Frontend**: React 19.2 | **Backend**: Node.js + Express | **Database**: MongoDB (Local)
 
-### `npm test`
+## 🚀 Quick Start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
+- Node.js v14+ | MongoDB | Webcam | Modern browser
 
-### `npm run build`
+### Windows (Recommended)
+```bash
+# Terminal 1: Start MongoDB
+mongod
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Terminal 2: Double-click START.bat
+# App opens at http://localhost:3000
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Manual Setup
+```bash
+# Terminal 1
+mongod
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Terminal 2
+cd server && npm install && npm run dev
 
-### `npm run eject`
+# Terminal 3
+npm install && npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🔓 Demo Credentials
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Role | Email | Password |
+|------|-------|----------|
+| Guard | `guard@entryshield.com` | `guard123` |
+| Admin | `admin@entryshield.com` | `admin123` |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Guard** - Full access: scanning, visitor logging, alerts  
+**Admin** - View-only: logs, alerts, analytics
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📖 Usage
 
-## Learn More
+**For Guards:**
+1. Log in with guard credentials
+2. Click "Start Scanning" to open webcam
+3. System auto-scans plates every 2 seconds
+4. Registered vehicles → auto-logged (green)
+5. Unknown vehicles → creates alert (red)
+6. Resolve alerts or register visitors
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**For Admins:**
+1. Log in with admin credentials
+2. View real-time dashboard and analytics
+3. Monitor all alerts (read-only)
+4. Access entry and visitor logs
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🗄️ Database
 
-### Code Splitting
+**Collections**: Users, Vehicles, Entry Logs, Visitors, Alerts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+MongoDB connection: `mongodb://127.0.0.1:27017/entryshield_ai`
 
-### Analyzing the Bundle Size
+## 🔌 API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- `/api/users/login` - Authentication
+- `/api/vehicles` - Register/manage vehicles
+- `/api/logs` - Entry logs
+- `/api/visitors` - Visitor records
+- `/api/alerts` - Create/resolve alerts
 
-### Making a Progressive Web App
+## 🐛 Troubleshooting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+| Issue | Solution |
+|-------|----------|
+| MongoDB won't connect | Ensure `mongod` is running |
+| Webcam not working | Check browser permissions, try different browser |
+| Port 5000 in use | Change port in `server/index.js` |
+| Node modules error | Delete `node_modules` and `package-lock.json`, run `npm install` |
 
-### Advanced Configuration
+## 📚 Documentation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [SETUP.md](SETUP.md) - Detailed setup instructions
+- [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md) - Technical details
 
-### Deployment
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/name`)
+3. Commit changes (`git commit -m 'Add feature'`)
+4. Push to branch (`git push origin feature/name`)
+5. Open a Pull Request
 
-### `npm run build` fails to minify
+## 🎯 Roadmap
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# Entry-Shield-AI
-Entry Shield AI is a web-based security system for managing and monitoring entry points. Built using HTML, CSS, JavaScript, and Node.js, it aims to provide a smart access control interface for tracking and managing visitors. The project is currently under development and will include more security and automation features
->>>>>>> e779270040b69760149d677dd47583f447f71628
+- Email/SMS alerts for critical events
+- Machine learning threat detection
+- Multi-camera support
+- Mobile app (iOS/Android)
+- Cloud deployment option
+- Advanced analytics dashboard
+
+## 📝 License
+
+MIT License - see [LICENSE](LICENSE)
+
+## 👨‍💼 Support
+
+- [Issues](https://github.com/RohitMahla001/Entry-Shield-AI/issues)
+- [SETUP.md](SETUP.md)
+- [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)
+
+---
+
+**EntryShield AI** - Protecting Your Space, Smart. ❤️
